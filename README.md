@@ -5,7 +5,15 @@
 - Ubuntu 24.04 LTSの場合
 
 ```bash
-sudo apt install clojure
+curl -L -O https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh
+chmod +x linux-install.sh
+sudo ./linux-install.sh```
+```
+
+```text
+Installing libs into /usr/local/lib/clojure
+Installing clojure and clj into /usr/local/bin
+Installing man pages into /usr/local/share/man/man1
 ```
 
 ## Calva
