@@ -20,4 +20,4 @@ pom.xml.asc
 .calva/output-window
 .calva/repl.calva-repl
 .lsp/.cache
-.clj-kondo/.cache
+.clj-kondo/

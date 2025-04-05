@@ -68,6 +68,10 @@ Installing man pages into /usr/local/share/man/man1
 
 ### Vimとの親和性を高める
 
+- コマンド実行
+- 移動
+- Paredit
+
 ## 情報源
 
 - [Clojure公式サイト](https://clojure.org/)
