@@ -16,6 +16,13 @@ Installing clojure and clj into /usr/local/bin
 Installing man pages into /usr/local/share/man/man1
 ```
 
+## 拡張子
+
+- `.clj` : Clojureのソースコード
+- `.cljs` : ClojureScriptのソースコード
+- `.cljc` : ClojureとClojureScriptの両方で使えるソースコード
+- `.edn` : Clojureのデータフォーマット
+
 ## Calva
 
 ### プロジェクト作成
@@ -41,6 +48,25 @@ Installing man pages into /usr/local/share/man/man1
 
 - `Ctrl + Enter` でカーソル直前の式を評価(Vimとちょっと相性悪い)
 - `Alt + Enter` で今いるところのトップレベルの式を評価(これはしょっちゅう使いそう)
+
+### 基本動作
+
+- インラインコード評価
+- Pareditによる構造を保ったままの編集
+- コードフォーマット
+- コードナビゲーション(定義ジャンプ)
+- デバッガー
+- リント
+- シンタックスハイライト
+- Clojureの機能に準じたレインボーブラケット
+- テストランナー
+- リファクタリング
+
+### コマンドの確認
+
+### 設定項目の確認
+
+### Vimとの親和性を高める
 
 ## 情報源
 

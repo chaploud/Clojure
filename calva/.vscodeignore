@@ -1,0 +1,21 @@
+# Put everything on the blacklist by default
+*
+*/**
+**/.DS_Store
+*/**/.DS_Store
+
+# Whitelist
+!language-configuration.json
+!clojure.tmLanguage.json
+!assets/**
+!out/**
+!package.json
+!README.md
+!CHANGELOG.md
+!LICENSE
+!clojure-lsp.jar
+!clojure-lsp-version
+!deps.clj.jar
+!deps-clj-version
+!bundled/**
+!snippets.jsonc
