@@ -138,4 +138,15 @@
 - Print clojuredocs.org examples to OutputWindow
 - Print Last Stcktrace to REPL Window
 
-## 設定探索
+## Spacemacs + CIDERを探索
+
+### Lisp State
+
+- 自作しよう
+- 前提
+  - Calvaがインストールされている
+  - VSCodeVimがインストールされている
+  - `,` `,` で lisp stateのようなものに入る
+  - `Ctrl + G` で lisp stateを抜ける
+- REPLとテストの行き来が激しいわけで、そこさえなんとかなるなら最低限の設定でよいか
+- チュートリアルに従い、Clojureを開発してみることが重要な気がする
