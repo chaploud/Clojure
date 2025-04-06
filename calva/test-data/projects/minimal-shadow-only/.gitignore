@@ -1,9 +1,0 @@
-**/public/js/
-**/target/
-package-lock.json
-**/node_modules
-**/.cache
-**/.portal
-**/.shadow-cljs
-.lein*
-.nrepl-port

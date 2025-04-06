@@ -1,2 +1,0 @@
-;; aliased.clj
-(ns aliased)

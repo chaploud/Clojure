@@ -1,1 +1,0 @@
-{:deps {mycorp/lib1 {:local/root "../libs/lib1"}}}

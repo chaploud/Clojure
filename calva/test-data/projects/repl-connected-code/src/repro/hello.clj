@@ -1,3 +1,0 @@
-(ns repro.hello)
-
-"Hello"
