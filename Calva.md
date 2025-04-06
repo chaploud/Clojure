@@ -76,12 +76,66 @@
     - カーソル位置からS式内の末尾までを削除
     - `Ctrl + Delete`
   - Kill/Delete Left
-    - S式の中でカーソルより左を削除
+    - S式の中でカーソルより左をその行で削除
     - `Ctrl + K` `Ctrl + H`
+  - Kill/Delete Right
+    - S式の中でカーソルより右をその行で削除
+    - `Ctrl + K` `Ctrl + K`
+  - Kill/Delete Sexp Backward
+    - カーソルより前にあるS式を削除
+    - `Ctrl + Alt + Backspace`
+  - Kill/Delete Sexp Forward
+    - カーソルより後にあるS式を削除
+    - `Ctrl + Shift + Delete`
+  - Move Cursor Backward Down Sexp/Form
+    - `Ctrl + Alt + UpArrow`
+  - きりがない気がしてきたので、ここまでにしておく(Spacemacsを参考にする)
 
+- Calva: Add Ritch Comment
+  - `(comment ...)`を挿入
+  - `Ctrl + Alt + R` `C`
 
-- clearInlineResults
+- Calva: Clear Inline Evaluation Results
   - インライン評価結果をクリア
+  - `Escapte`
 
+- Calva: Connetct to a Running REPL Server in the Project
+  - `Ctrl + Alt + C` `Ctrl + Alt + C`
+- Calva: Connect to a Running REPL Server, not in the Project
+  - `Ctrl + Alt + C` `Alt + C`
+
+- Calva: Copy Last Evaluation Result to Clipboard
+
+- Calva: Evaluate
+  - Current Enclosing Form
+    - `Ctrl + Shift + Enter`
+  - Current Form (or selection, if any)
+    - `Ctrl + Enter`
+  - Current Form and Replace it with the Result
+  - Current Form to Comment
+  - Fiddle File for Current File
+  - From Start of File to Cursor, Closing Brackets
+    - `Ctrl + Shift + Alt + Enter`
+  - From Start of List to Cursor, Closing Brackets
+    - `Ctrl + Alt + Enter`
+  - From Start of Top Level Form to Cursor, Closing Brackets
+    - `Shift + ALt + Enter`
+  - Selection, Closing Brackets
+    - `Ctrl + Alt + Enter`
+  - Top Level Form (defun)
+    - `Alt + Enter`
+  - Top Level Form (defun) to Comment
+  - Interrupt Running Evaluations
+  - Load/Evaluate Current File and its Requires/Dependencies
+    - `Ctrl + Alt + C` `Enter`
+
+- Calva: Open Fiddle File for Current File
+  - Fiddle Fileとは、現在接続ているREPLに対して、ちょっとしたコードを実行するためのファイル
+- Calva Source File for Current Fiddle File
+- Open the REPL Menu (Start/Connect a REPL, etc.)
+
+- Print clojuredocs.org examples to Rich Comment
+- Print clojuredocs.org examples to OutputWindow
+- Print Last Stcktrace to REPL Window
 
 ## 設定探索
