@@ -72,3 +72,17 @@ false ;;=> false
 
 ; S-expressions
 (+ 1 2)
+
+; quote
+'x
+'(1 2)
+
+;; REPL
+(+ 3 4)
+*1
+*2
+*3
+(+ *1 *2)
+
+(require '[clojure.repl :refer :all])
+(doc doc)
