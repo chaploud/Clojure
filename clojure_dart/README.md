@@ -22,3 +22,70 @@ sudo apt-get install libc6:i386 libncurses5:i386 libstdc++6:i386 lib32z1 libbz2-
   - ここを参考にインストールする
 
 - VSCodeとの連携
+
+## Mac上での環境構築
+
+### 最初期
+
+- Macのセットアップ
+- 最初だけBluetoothでキーボードとタッチパッドを接続
+- iCloud連携
+- 日本語
+- Apple Developer Accountに登録
+
+### 設定変更
+
+- ファイル共有 => ON
+- 画面共有(VNC) => ON
+- リモートログイン => ON
+- 各種、自動でスリープしないための設定に変更
+- ホスト名をを好きなものに変更(今後SSH時に使う)
+
+### ソフトウェア
+
+```zsh
+# Xcode Command Line Toolsのインストール(後でXCode本体も入れるが、brewのために必要)
+xcode-select --install
+
+# GitHubからHomebrew-4.4.29.pkgをダウンロードしてクリック
+# Homebrewインストール後、パス通し
+echo 'eval "(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+
+# Rosettaのインストール
+# Apple Silicon Macの場合、Rosettaをインストールする必要がある
+# Rosettaは、IntelベースのアプリケーションをApple Silicon Macで実行するための互換レイヤー
+sudo softwareupdate --install-rosetta --agree-to-license
+
+# Flutter
+brew install --cask flutter
+brew install cocoapods
+
+# Google Chrome
+brew install --cask google-chrome
+
+# Android Studio
+brew install --cask android-studio
+
+# Android Studioを初回起動
+# その後、Android SDK Command-line Toolsをポチポチでインストール
+
+# XCode
+# App StoreからXCodeをインストール
+# XCodeを初回起動
+
+# ここまででAndroidとiOSのエミュレータが使えるようになる
+flutter doctor # すべてチェックされているか
+
+# Clojure
+brew install clojure
+brew install zsh-completions
+brew install coreutils # GNUコマンド
+
+# .zshrcや.vimrcをリポジトリクローン後、シンボリックリンクを張る(vim-plug導入)
+# GitHub認証用の公開鍵作成・登録
+```
+
+### 開発フロー
+
+- UbuntuからVSCodeでSSH接続する(初回には`ssh-copy-id`を実行)
+- エミュレータ確認のためには、RemminaからVNC接続する
