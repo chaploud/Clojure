@@ -1,0 +1,23 @@
+(ns acme.main
+  (:require ["package:flutter/material.dart" :as m]
+            [cljd.flutter :as f]))
+
+(ns acme.main
+  (:require ["package:flutter/material.dart" :as m]
+            [cljd.flutter :as f]))
+
+(defn main []
+  (f/run
+   (m/MaterialApp
+    .title "Welcome to Flutter"
+    .theme (m/ThemeData .primarySwatch m.Colors/pink))
+   .home
+   (m/Scaffold
+    .appBar (m/AppBar
+             .title (m/Text "Welcome to ClojureDart by Shota")))
+   .body
+   m/Center
+   (m/Text "Let's get coding! Yeahhhh!"
+           .style (m/TextStyle
+                   .color m.Colors/red
+                   .fontSize 32.0))))
