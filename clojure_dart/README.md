@@ -56,8 +56,8 @@ echo 'eval "(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
 # Rosettaは、IntelベースのアプリケーションをApple Silicon Macで実行するための互換レイヤー
 sudo softwareupdate --install-rosetta --agree-to-license
 
-# Flutter
-brew install --cask flutter
+# Flutter(注: 結局 fvmを利用)
+brew install --cask flutter # 後でfvmに変更した
 brew install cocoapods
 
 # Google Chrome
@@ -83,6 +83,20 @@ brew install coreutils # GNUコマンド
 
 # .zshrcや.vimrcをリポジトリクローン後、シンボリックリンクを張る(vim-plug導入)
 # GitHub認証用の公開鍵作成・登録
+
+### Flutterの今後のバージョンのため、fvmをインストール
+brew tap leoafarias/fvm
+brew install fvm
+fvm releases # 最新版のリストを表示
+fvm global 3.29.3 # グローバルインストール
+
+# .zshrcの設定
+# fvm (flutter version manager)
+alias flutter="fvm flutter"
+alias dart="fvm dart"
+
+# プロジェクト内で使うバージョン指定
+fvm use 3.29.3 # プロジェクト内で使うバージョン指定(.fvmが作成される)
 ```
 
 ### 開発フロー
