@@ -85,4 +85,36 @@ void main() {
   final map2 = <int, String>{200: 'OK', 403: 'Forbidden', 404: 'Not Found'};
   final setOrMap = {}; // これはMap
   print(setOrMap is Map); // true
+
+  // Record(不変)
+  final record1 = (300, 'cake');
+  final (int, String) record2 = record1;
+  final (int price1, String name1) = (400, 'pie');
+  // 分割代入
+  print(price1);
+  print(name1);
+  final (int x, String y) record6 = (500, 'nuts');
+  print(record6);
+  // 名前付きレコード
+  final record3 = (price: 300, name: 'cake');
+  final ({int price, String name}) record4 = record3;
+  print(record1);
+  print(record4);
+  print(record1 == record4);
+  print(record3 == record4);
+
+  // 混在
+  final record7 = (name: 'cake', price: 300, 99);
+  print(record7); // 名前無しが先頭に来る
+  final (int, {String name, int price}) record8 = record7;
+  print(record8);
+  print(record8.name); // アクセス
+  print(record8.price);
+  print(record8.$1); // 名前無しのアクセス
+
+  // Object
+  final list5 = [0, 'abc', true];
+
+  // dynamicは原則使わない
+  final List<dynamic> list6 = [0, 'abc', true];
 }
