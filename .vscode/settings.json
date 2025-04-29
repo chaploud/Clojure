@@ -4,10 +4,12 @@
       "name": "Connect Server nREPL",
       "projectType": "generic",
       "autoSelectForJackIn": true,
-      "autoSelectForConnect": true
+      "autoSelectForConnect": true,
+      "projectRootPath": [
+        "."
+      ],
     }
   ],
-  "calva.autoConnectRepl": true,
   "debug.internalConsoleOptions": "openOnSessionStart",
   "[dart]": {
     // Automatically format code on save and during typing of certain characters
