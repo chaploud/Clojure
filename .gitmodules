@@ -1,0 +1,3 @@
+[submodule "workshop/The-Clojure-Workshop"]
+	path = workshop/The-Clojure-Workshop
+	url = https://github.com/PacktWorkshops/The-Clojure-Workshop.git
