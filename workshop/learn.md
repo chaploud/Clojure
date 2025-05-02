@@ -27,8 +27,8 @@
 
 - `do`
 - `if`
-- `when`: `if + do` trueの場合は連続する式を順次評価して最後の評価値を返す
+- `when`: `if + do`マクロ trueの場合は連続する式を順次評価して最後の評価値を返す
 - `def`: globalな束縛(binding), 常にグローバルスコープを束縛する
-- `let`: localな束縛(binding)
+- `let`: localな束縛(binding) + do
 - `fn`
-- `defn`
+- `defn`: `def` + `fn`マクロ
