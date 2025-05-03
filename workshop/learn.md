@@ -43,3 +43,8 @@
 
 - Clojureでは基本的にequalityで比較
 - identityで比較したい場合は`identical?`を使う
+
+## Immutability (Persistent Data Structures)
+
+- メモリもCPUも大幅に性能が向上した現在、immutableなデータ構造は利点のほうが多い
+- ビデオゲームのようなハイパフォーマンスが要求される場合以外では、イミュータブルなデータ構造の受け渡し処理で多少のパフォーマンスの低下があっても気にならない
