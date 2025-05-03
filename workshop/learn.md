@@ -32,3 +32,14 @@
 - `let`: localな束縛(binding) + do
 - `fn`
 - `defn`: `def` + `fn`マクロ
+
+## Truthy / Falsey
+
+- `nil`と`false`以外はtruthy => シンプル!
+  - 他言語ではfalseyな`[]`や`0`や`""`などはすべてtruthy
+  - 空リスト`'()`もtruthyなのには他のLispとの違いに注意
+
+## Comparison
+
+- Clojureでは基本的にequalityで比較
+- identityで比較したい場合は`identical?`を使う
