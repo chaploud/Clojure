@@ -49,6 +49,24 @@
 - メモリもCPUも大幅に性能が向上した現在、immutableなデータ構造は利点のほうが多い
 - ビデオゲームのようなハイパフォーマンスが要求される場合以外では、イミュータブルなデータ構造の受け渡し処理で多少のパフォーマンスの低下があっても気にならない
 
+## Data Types
+
+### String
+
+- `java.lang.String`: `(type "hello")`
+- `java.lang.Character`: `(type \h)`
+- ClojureScriptではchar型はなく、String型のみ
+
+### Number
+
+- `java.lang.Long`: `(type 2)`
+- `java.lang.BigInt`: `(type 2N)`
+- `clojure.lang.Ratio`: `(type 1/2)`
+- floating-pointは伝染していく
+- `java.lang.Double`: `(type 1.0)`
+- `java.math.BigDecimal`: `(type 1.0M)`
+- ClojureScriptはNumber型のみ
+
 ## 出現したシンタックス・関数・マクロ・スペシャルフォーム
 
 ### シンタックス
@@ -68,6 +86,7 @@
 - `doc`: ドキュメントの表示
 - `find-doc`: ドキュメントの検索
 - `apropos`: 関数名の検索
+- `dir`: 名前空間の関数等の一覧表示
 
 ### スペシャルフォーム
 
@@ -109,6 +128,10 @@
 - `>`: 大なり
 - `>=`: 大なりイコール
 - `not`: 否定
+- `int`: 整数化
+- `char-array`: 文字列を`java.lang.Character`の配列に変換
+- `first`: seqの先頭要素を取得
+- `last`: seqの末尾要素を取得
 
 #### clojure.string
 
@@ -116,7 +139,13 @@
 - `clojure.string/capitalize`: 先頭大文字化
 - `clojure.string/reverse`: 逆順
 - `clojure.string/replace`: 置換
+- `clojure.string/includes?`: 文字列に文字列が含まれているか
 
 #### java.lang
 
 - `System/exit`: プロセス終了
+- `Math/PI`: 円周率
+- `Math/random`: 乱数生成(0～1)
+- `Math/sqrt`: 平方根
+- `Math/round`: 四捨五入
+- `Math/pow`: 指数
