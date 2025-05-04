@@ -67,6 +67,42 @@
 - `java.math.BigDecimal`: `(type 1.0M)`
 - ClojureScriptはNumber型のみ
 
+### Boolean
+
+- `java.lang.Boolean`: `(type true)`
+  - true/false
+- ClojureSctiptではBoolean
+
+### Symbol
+
+- `clojure.lang.Symbol`: `(type 'hello)`
+- 束縛された名前など
+
+### Keyword
+
+- `clojure.lang.Keyword`: `(type :hello)`
+
+### Collection
+
+- クラスの肥大化はいいことないぞと
+- Clojureにおいては、型は少なく、みんなが知る型のみで操作する
+
+#### Map
+
+- `clojure.lang.PersistentArrayMap`: `(type {:a 1 :b 2})`
+- `(get favorite-fruit :name "default")`: マップから値を取得
+- `(favorite-fruit :name "default")`: マップから値を取得
+- `(:name favorite-fruit "default")`: マップから値を取得
+- `(assoc favorite-fruit :shape "egg-like")`: マップに値を追加(非破壊的)
+- `(update favorite-fruit :kcal_per_100g dec)`: マップの値を更新(非破壊的)
+- `(dissoc favorite-fruit :name)`: マップから値を削除(非破壊的)
+
+#### Set
+
+#### Vector
+
+#### List
+
 ## 出現したシンタックス・関数・マクロ・スペシャルフォーム
 
 ### シンタックス
@@ -78,6 +114,13 @@
 - `'()`: クォートされたリスト
 - `[]`: ベクタ
 - falsyなのは`nil`と`false`だけでその他はいかなるものもすべてtruthy
+- `2N`: BigIntリテラル
+- `2.0M`: BigDecimalリテラル
+- `\h`: 文字リテラル
+- `'hello`: シンボルリテラル
+- `:hello`: キーワードリテラル
+- `{:a 1 :b 2}`: マップ
+- `#{1 2 3}`: セット
 
 ### REPL専用
 
@@ -132,6 +175,14 @@
 - `char-array`: 文字列を`java.lang.Character`の配列に変換
 - `first`: seqの先頭要素を取得
 - `last`: seqの末尾要素を取得
+- `subs`: 文字列の部分取得
+- `char`: char型に変換
+- `count`: 要素数を取得
+- `hash-map`: マップを作成
+- `get`: マップから値を取得
+- `assoc`: マップに値を追加
+- `update`: マップの値を更新
+- `dissoc`: マップから値を削除
 
 #### clojure.string
 
@@ -140,6 +191,7 @@
 - `clojure.string/reverse`: 逆順
 - `clojure.string/replace`: 置換
 - `clojure.string/includes?`: 文字列に文字列が含まれているか
+- `clojure.string/split`: 文字列を分割
 
 #### java.lang
 
@@ -149,3 +201,4 @@
 - `Math/sqrt`: 平方根
 - `Math/round`: 四捨五入
 - `Math/pow`: 指数
+- `Integer/parseInt`: 整数化
