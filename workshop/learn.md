@@ -90,6 +90,7 @@
 #### Map
 
 - `clojure.lang.PersistentArrayMap`: `(type {:a 1 :b 2})`
+  - 挿入順序を保持
 - `(get favorite-fruit :name "default")`: マップから値を取得
 - `(favorite-fruit :name "default")`: マップから値を取得
 - `(:name favorite-fruit "default")`: マップから値を取得
@@ -98,6 +99,13 @@
 - `(dissoc favorite-fruit :name)`: マップから値を削除(非破壊的)
 
 #### Set
+
+- `clojure.lang.PersistentHashSet`: `(type #{1 2 3})`
+  - 挿入順序を保持しない
+- `(currencies :name)`: セットから値を取得
+- `(:name currencies "default")`: セットから値を取得
+- `(conj currencies :name)`: セットに値を追加(非破壊的)
+- `(disj currencies :name)`: セットから値を削除(非破壊的)
 
 #### Vector
 
@@ -121,6 +129,10 @@
 - `:hello`: キーワードリテラル
 - `{:a 1 :b 2}`: マップ
 - `#{1 2 3}`: セット
+- `(:a some-map)`: マップから値を取得
+  - `(some-map :a)`: マップから値を取得
+- `(:a some-set)`: セットから値を取得
+  - `(some-set :a)`: セットから値を取得
 
 ### REPL専用
 
@@ -178,11 +190,17 @@
 - `subs`: 文字列の部分取得
 - `char`: char型に変換
 - `count`: 要素数を取得
-- `hash-map`: マップを作成
-- `get`: マップから値を取得
+- `hash-map`: マップを作成(挿入順序を保持しない)
+- `get`: マップ・セットから値を取得(なければnil)
 - `assoc`: マップに値を追加
 - `update`: マップの値を更新
 - `dissoc`: マップから値を削除
+- `hash-set`: セットを作成
+- `set`: seqをセット化
+- `sorted-set`: キーでソートされたセットを作成
+- `contains?`: セット・マップに値が含まれているか
+- `conj`: seqに要素を追加
+- `disj`: seqから要素を削除
 
 #### clojure.string
 
