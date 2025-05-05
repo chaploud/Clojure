@@ -90,7 +90,8 @@
 #### Map
 
 - `clojure.lang.PersistentArrayMap`: `(type {:a 1 :b 2})`
-  - 挿入順序を保持
+  - 挿入順序は保持されない(9個以上だと以下に変わる)
+  - `clojure.lang.PersistentHashMap`
 - `(get favorite-fruit :name "default")`: マップから値を取得
 - `(favorite-fruit :name "default")`: マップから値を取得
 - `(:name favorite-fruit "default")`: マップから値を取得
@@ -109,7 +110,18 @@
 
 #### Vector
 
+- アイテムは末尾に追加していくのが効率的
+- `clojure.lang.PersistentVector`: `(type [1 2 3])`
+- `(fibonacci 6)`: ベクタから値を取得
+- `(conj fibonacci 8)`: ベクタに値を追加(非破壊的)
+- `(assoc fibonacci 6 8)`: ベクタの値を更新(インデックス指定)(非破壊的)
+
 #### List
+
+- アイテムは先頭に追加していく
+- `clojure.lang.PersistentList`: `(type '(1 2 3))`
+- conjすると先頭に追加される
+- listは、LinkedListのようなものなので、インデックスによるアクセスはベクタより遅い
 
 ## 出現したシンタックス・関数・マクロ・スペシャルフォーム
 
@@ -191,7 +203,7 @@
 - `char`: char型に変換
 - `count`: 要素数を取得
 - `hash-map`: マップを作成(挿入順序を保持しない)
-- `get`: マップ・セットから値を取得(なければnil)
+- `get`: マップ・セット・ベクタから値を取得(なければnil)
 - `assoc`: マップに値を追加
 - `update`: マップの値を更新
 - `dissoc`: マップから値を削除
@@ -201,6 +213,20 @@
 - `contains?`: セット・マップに値が含まれているか
 - `conj`: seqに要素を追加
 - `disj`: seqから要素を削除
+- `vector`: ベクタを作成
+- `vec`: seqをベクタ化
+- `list`: リストを作成
+- `rest`: seqの先頭要素を除いたものを取得
+- `nth`: seqのn番目の要素を取得
+- `cons`: seqの先頭に要素を追加
+- `empty?`: seqが空かどうか
+- `seq`: sequenceに変換
+- `map`: sequenceに関数を適用
+- `filter`: sequenceに関数を適用し、truthyなものを取得
+- `reduce`: sequenceに関数を適用し、1つの値にまとめる
+- `into`: collectionに別のcollectionを追加
+- `concat`: collectionを連結
+- `sort`: collectionをソート
 
 #### clojure.string
 
