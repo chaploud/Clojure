@@ -145,6 +145,7 @@
   - `(some-map :a)`: マップから値を取得
 - `(:a some-set)`: セットから値を取得
   - `(some-set :a)`: セットから値を取得
+- `@memory-db`: アトムの値を取得
 
 ### REPL専用
 
@@ -183,6 +184,7 @@
 - `/`: 除算, 分数を表現できる
 - `println`: 改行付き出力
 - `inc`: インクリメント
+- `dec`: デクリメント
 - `str`: 文字列化
 - `mod`: 剰余
 - `rand`: 乱数生成(0～1)
@@ -227,6 +229,13 @@
 - `into`: collectionに別のcollectionを追加
 - `concat`: collectionを連結
 - `sort`: collectionをソート
+- `get-in`: ネストしたマップから値を取得
+- `assoc-in`: ネストしたマップに値を結びつける
+- `update-in`: ネストしたマップの値を更新
+- `pprint`: pretty print
+- `set!`: 変数の束縛を変更
+- `atom`: メモリ上で常に1つの値を持つ変数を作成
+- `reset!`: アトムの値を変更
 
 #### clojure.string
 
@@ -246,3 +255,7 @@
 - `Math/round`: 四捨五入
 - `Math/pow`: 指数
 - `Integer/parseInt`: 整数化
+
+### グローバル変数・定数
+
+- `*print-level*`: REPLの出力階層レベル
