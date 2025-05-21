@@ -173,6 +173,7 @@
 - `(and (= 1 1) (= 2 2))`: falsyを含む=>その評価値(false/nil), truthyな間順次評価し最後の評価値を返す
 - `(or (= 1 1) (= 2 2))`: falsyな間順次評価し最初のtruthyな評価値を返す. 最後までなければ最後の評価値を返す(false/nil)
 - `(cond (true? x) 1 (false? x) 2 (nil? x) 3)`: リッチな条件分岐
+- `(if-let [x (str "hoge" "fuga")] (println (str "x is " x)) (println "x is falsy"))`
 
 ### 関数
 

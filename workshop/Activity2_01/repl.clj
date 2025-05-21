@@ -48,3 +48,11 @@
           index (- (count (get-in new-db [table-name :data])) 1)]
       (write-db
        (update-in new-db [table-name :indexes id-key] assoc (id-key record) index)))))
+
+(create-table :clients)
+(create-table :fruits)
+(insert :fruits {:name "Pear" :stock 3} :name)
+(insert :fruits {:name "Apricot" :stock 30} :name)
+(insert :fruits {:name "Grapefruit" :stock 6} :name)
+(select-* :fruits)
+(select-*-where :fruits :name "Apricot")
