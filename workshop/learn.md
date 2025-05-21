@@ -123,6 +123,27 @@
 - conjすると先頭に追加される
 - listは、LinkedListのようなものなので、インデックスによるアクセスはベクタより遅い
 
+## Destructuring
+
+- 順序に従ったデストラクチャリング(Vector)
+- キーに従ったデストラクチャリング(Map)
+
+```clojure
+;; Vector
+(let [[a b c] [1 2 3]]
+  (println a b c)) ; 1 2 3
+
+;; List
+(let [[a b c] '(1 2 3)]
+  (println a b c)) ; 1 2 3
+
+;; Map
+(let [{lat :lat lon :lon} {:lat 35 :lon 135}]
+  (println lat lon)) ;; 35 135
+(let [{:keys [lat lon]} {:lat 35 :lon 135}]
+  (println lat lon)) ;; 35 135
+```
+
 ## 出現したシンタックス・関数・マクロ・スペシャルフォーム
 
 ### シンタックス
