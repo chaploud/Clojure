@@ -1,0 +1,14 @@
+{:indentation? true
+ :indents {}
+ :extra-indents {}
+ :indent-line-comments? false
+ :alias-map {}
+ :remove-surrounding-whitespace? true
+ :remove-trailing-whitespace? true
+ :insert-missing-whitespace? true
+ :remove-consecutive-blank-lines? true
+ :remove-multiple-non-indenting-spaces? false
+ :split-keypairs-over-multiple-lines? false
+ :sort-ns-references? false
+ :function-arguments-indentation :community
+ :file-pattern #"\.clj[csx]?$"}
