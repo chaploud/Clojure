@@ -23,6 +23,7 @@
 (print-flight [[48.9615, 2.4372], [37.742 -25.6976]])
 
 ;;  7
+;; 段階的デストラクチャリング
 (defn print-flight [flight]
   (let [[departure arrival] flight
         [lat1 lon1] departure

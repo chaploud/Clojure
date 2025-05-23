@@ -130,8 +130,10 @@
 
 ```clojure
 ;; Vector
-(let [[a b c] [1 2 3]]
-  (println a b c)) ; 1 2 3
+; _ 無視
+; & xxx 残りをseqに入れる
+(let [[a b c _ & rest] [1 2 3 4 5 6]]
+  (println a b c rest)) ; 1 2 3 (5 6)
 
 ;; List
 (let [[a b c] '(1 2 3)]
@@ -140,6 +142,7 @@
 ;; Map
 (let [{lat :lat lon :lon} {:lat 35 :lon 135}]
   (println lat lon)) ;; 35 135
+
 (let [{:keys [lat lon]} {:lat 35 :lon 135}]
   (println lat lon)) ;; 35 135
 ```
