@@ -139,17 +139,74 @@
 (let [[a b c] '(1 2 3)]
   (println a b c)) ; 1 2 3
 
+;; 入れ子にもできる
+(def flight [[48.9615, 2.4372], [37.742, -25.6976]])
+(let [[[lat1 lon1] [lat2 lon2]] flight]
+    (println (str "Lat " lat1 " Lon " lon1 " - Lat " lat2 " Lon " lon2)))
+
+;; defnの引数の段階でDestructuringできる
+(defn print-flight
+  [[[lat1 lon1] [lat2 lon2]]]
+  (println (str "Lat " lat1 " Lon " lon1 " - Lat " lat2 " Lon " lon2)))
+
 ;; Map
 (let [{lat :lat lon :lon} {:lat 35 :lon 135}]
   (println lat lon)) ;; 35 135
 
 (let [{:keys [lat lon]} {:lat 35 :lon 135}]
   (println lat lon)) ;; 35 135
+
+;; 入れ子にもできる
+(def flight [{:from {:lat 48.9615 :lon 2.4372},
+              :to {:lat 37.742 :lon -25.6976}},
+             {:from {:lat 37.742 :lon -25.6976},
+              :to {:lat 48.9615 :lon 2.4372}}])
+(let [{{lat1 :lat lon1 :lon} :from,
+       {lat2 :lat lon2 :lon} :to} flight]
+    (println (str "Lat " lat1 " Lon " lon1 " - Lat " lat2 " Lon " lon2)))
+
+;; defnの引数の段階でDestructuringできる
+(defn print-mapjet-flight
+  [{{lat1 :lat lon1 :lon} :from
+    {lat2 :lat lon2 :lon} :to}]
+  (println (str "Lat " lat1 " Lon " lon1 " - Lat " lat2 " Lon " lon2)))
 ```
 
 - デストラクチャリングはVectorとMap入れ子にしてもいい
 - letの上から順次パースしていく形でもいいし、 外側から一気に入れ子でパースしてもいい
 - 状況に応じて読みやすい方を採用しよう
+
+## アリティオーバーロード
+
+- 引数の数が違う場合は`defn`の引数`[]`とbodyを`()`で囲んだものを複数並べることができる
+- アリティ(Arity)に応じて呼び出されるものが変わる
+
+```clojure
+(defn overloading
+  ([]
+   (println "No argument"))
+  ([x]
+   (println "One argument: " x))
+  ([x y]
+   (println "Two arguments: " x", " y)))
+```
+
+## 引数内のキーワードによる意味
+
+```clojure
+(defn strike
+  "target引数が1個だけだと、strike関数をtarget :fistsを引数にして呼び出し
+  targetとweaponが与えられたとき、:asでtargetとして元のオブジェクトを格納
+  targetの:campをcampに、:armorをarmorに格納、armorがnilかなければarmorを0に設定"
+  ([target] (strike target :fists))
+  ([{:keys [camp armor], :or {armor 0}, :as target} weapon]
+   (let [points (weapon weapon-damage)]
+     (if (= :gnomes camp)
+       (update target :health + points)
+       (let [damage (* points (- 1 armor))]
+         (update target :health - damage))))))
+
+```
 
 ## 出現したシンタックス・関数・マクロ・スペシャルフォーム
 

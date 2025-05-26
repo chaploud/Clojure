@@ -4,10 +4,10 @@
 ;; 2
 (defn strike
   ([target weapon]
-    (let [points (weapon weapon-damage)]
-      (if (= :gnomes (:camp target))
-        (update target :health + points)
-        (update target :health - points)))))
+   (let [points (weapon weapon-damage)]
+     (if (= :gnomes (:camp target))
+       (update target :health + points)
+       (update target :health - points)))))
 
 ;; 3
 (def enemy {:name "Zulkaz", :health 250, :armor 0.8, :camp :trolls})
@@ -22,23 +22,23 @@
 ;; 5
 (defn strike
   ([target weapon]
-    (let [points (weapon weapon-damage)]
-      (if (= :gnomes (:camp target))
-        (update target :health + points)
-        (let [armor (or (:armor target) 0)
-              damage (* points (- 1 armor))]
-          (update target :health - damage))))))
+   (let [points (weapon weapon-damage)]
+     (if (= :gnomes (:camp target))
+       (update target :health + points)
+       (let [armor (or (:armor target) 0)
+             damage (* points (- 1 armor))]
+         (update target :health - damage))))))
 
 
 ;; 8
 (defn strike
   ([{:keys [camp armor] :as target} weapon]
-    (let [points (weapon weapon-damage)]
-      (if (= :gnomes camp)
-        (update target :health + points)
-        (let [armor-effect (or (:armor target) 0)
-              damage (* points (- 1 armor-effect))]
-          (update target :health - damage))))))
+   (let [points (weapon weapon-damage)]
+     (if (= :gnomes camp)
+       (update target :health + points)
+       (let [armor-effect (or (:armor target) 0)
+             damage (* points (- 1 armor-effect))]
+         (update target :health - damage))))))
 
 
 
@@ -48,9 +48,9 @@
    Strike will heal a target that belongs to the gnomes camp."
   ([target] (strike target :fists))
   ([{:keys [camp armor], :or {armor 0}, :as target} weapon]
-    (let [points (weapon weapon-damage)]
-      (if (= :gnomes camp)
-        (update target :health + points)
-        (let [damage (* points (- 1 armor))]
-          (update target :health - damage))))))
+   (let [points (weapon weapon-damage)]
+     (if (= :gnomes camp)
+       (update target :health + points)
+       (let [damage (* points (- 1 armor))]
+         (update target :health - damage))))))
 
