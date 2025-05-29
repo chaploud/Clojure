@@ -330,3 +330,11 @@ x ;; Unable to resolve symbol: x in this context
 ;; 重要度: B
 ;; 標準出力ストリームを示す。
 *out* ;;=> #object[java.io.PrintWriter 0x4b20f0ce "java.io.PrintWriter@4b20f0ce"]
+
+;; *warn-on-reflection*
+;; [グローバル束縛]
+;; 重要度: C
+;; リフレクション警告を表示するかどうかを制御する。
+*warn-on-reflection* ;;=> false
+
+;; *compile
