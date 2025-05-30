@@ -52,3 +52,24 @@
 
 (let [mysterious-fn (random-fn)]
   (mysterious-fn 3 7))
+
+(def marketing-adder (partial + 0.99)) ;; 引数1つ固定(defnではなくdef)
+(marketing-adder 10 5)
+
+(def format-price (partial str "€"))
+(format-price "100")
+(format-price 10 50)
+
+(defn sample [coll] (first (shuffle coll)))
+(sample [1 2 3 4])
+
+(def sample (comp first shuffle))
+(sample [1 2 3 4])
+
+((comp inc *) 2 2)
+((comp * inc) 2 2)
+; Execution error (ArityException) at workshop.chapter03.function/eval10950 (REPL:70).
+; Wrong number of args (2) passed to: clojure.core/inc
+
+(def checkout (comp (partial str "Only ") format-price marketing-adder))
+(checkout 10 5 15 6 9)

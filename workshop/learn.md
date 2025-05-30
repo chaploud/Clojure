@@ -210,6 +210,19 @@
 
 ## 第一級関数
 
+- 関数は値として扱える
+- 関数を引数に取ることができる
+- 関数を返すことができる
+- 関数を変数に束縛できる
+- 様々な組み込みの高階関数がある
+
+```clojure
+(def marketing-adder (partial + 0.99)) ;; 引数1つ固定(defnではなくdef)
+(def format-price (partial str "€"))
+(def sample (comp first shuffle)) ;; 関数合成
+(def checkout (comp (partial str "Only ") format-price marketing-adder))
+```
+
 ## 出現したシンタックス・関数・マクロ・スペシャルフォーム
 
 ### シンタックス
@@ -328,6 +341,8 @@
 - `apply`: 第1引数に関数を取り、第2引数のコレクションをその関数の引数として展開して与える
 - `shuffle`: コレクションの要素をランダムに並び替える
 - `fn?`: 引数が関数かどうかを判定
+- `partial`: 関数の一部の引数を固定して新しい関数を作成
+- `comp`: 複数の関数を合成して新しい関数を作成
 
 #### clojure.string
 
