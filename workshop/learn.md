@@ -11,6 +11,7 @@
 - `(doc SYMBOL)`: ドキュメントの表示
 - `(find-doc #"(?i)hoge")`: ドキュメントの検索
 - `(apropos "keyword")`: 関数名の検索
+- `(source SYMBOL)`: ソースコードの表示
 
 ## Evaluation of Clojure Code
 
@@ -246,6 +247,9 @@
 - `(:a some-set)`: セットから値を取得
   - `(some-set :a)`: セットから値を取得
 - `@memory-db`: アトムの値を取得
+- `#(- % 100)`: 無名関数リテラル `= (fn [x] (- x 100))`
+- `#(+ %1 %2)`: 無名関数リテラル `= (fn [x y] (+ x y))`
+- `#(println %1 %2 %&)`: 無名関数リテラル `= (fn [x y & more] (println x y more))`
 
 ### REPL専用
 
@@ -343,6 +347,9 @@
 - `fn?`: 引数が関数かどうかを判定
 - `partial`: 関数の一部の引数を固定して新しい関数を作成
 - `comp`: 複数の関数を合成して新しい関数を作成
+- `rand-int`: 整数の乱数を生成
+- `identity`: 引数をそのまま返す
+- `vals`: マップの値をseqで取得
 
 #### clojure.string
 
