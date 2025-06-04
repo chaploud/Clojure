@@ -73,3 +73,5 @@
 
 (def checkout (comp (partial str "Only ") format-price marketing-adder))
 (checkout 10 5 15 6 9)
+
+;; Multimethods

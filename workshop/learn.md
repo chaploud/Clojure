@@ -224,6 +224,8 @@
 (def checkout (comp (partial str "Only ") format-price marketing-adder))
 ```
 
+## Multimethods
+
 ## 出現したシンタックス・関数・マクロ・スペシャルフォーム
 
 ### シンタックス
