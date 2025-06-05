@@ -12,3 +12,11 @@
   (dotimes [i n]
     #break ^{:break/when (= i 7)}
      (prn i)))
+
+(defn print-nums [n]
+  (dotimes [i n]
+    #break ^{:break/when (= i 7)}
+     (prn i)))
+
+(let [name "chaploud"]
+  (println "Hello" name))
